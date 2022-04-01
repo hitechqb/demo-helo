@@ -1,13 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 const Home: NextPage = () => {
-  useEffect(()=> {
-      window.location.href = "snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/";
-  });
+  // useEffect(()=> {
+  //     window.location.href = "snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/";
+  // });
 
+   const [url, setURL] = useState("null")
+    function handleGetURL() {
+       const u = window.location.href + window.location.pathname + window.location.search
+       setURL(u);
+    }
   async function handleOpenDeeplink() {
       window.open("snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/", "_blank")
   }
@@ -26,6 +31,11 @@ const Home: NextPage = () => {
             <h2>Open App</h2>
             <button onClick={handleOpenDeeplink}>Back To Helo App</button>
           </div>
+            <div className={styles.card}>
+                <p>FullURL: {url} </p>
+                <button onClick={handleGetURL}>GetURL</button>
+                <button onClick={()=> setURL("null")}>Clear</button>
+            </div>
         </div>
       </main>
     </div>
