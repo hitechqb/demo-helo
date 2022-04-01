@@ -5,18 +5,12 @@ import {useEffect} from "react";
 
 const Home: NextPage = () => {
   useEffect(()=> {
-      window.open("snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/", "_blank")
+      handleOpenDeeplink()
   });
 
-    const handleOpenDeeplink = () => {
-        const data ={
-            "url":"https://docs.zalopay.vn"
-        }
-
-        //@ts-ignore
-        ZJSBridge.Device.showToast("Message", e => {console.log(e)})
-        // ZJSBridge.Misc.openInAppRw(data, (e: any) => {console.log("demo")})
-    }
+  async function handleOpenDeeplink() {
+      window.open("snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/", "_blank")
+  }
 
   return (
     <div className={styles.container}>
@@ -29,8 +23,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.grid}>
           <div className={styles.card}>
-            <h2>Click me</h2>
-            <button onClick={handleOpenDeeplink}>Open Deeplink</button>
+            <h2>Open App</h2>
+            <button onClick={handleOpenDeeplink}>Back To Helo App</button>
           </div>
         </div>
       </main>
