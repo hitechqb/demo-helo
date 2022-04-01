@@ -5,7 +5,7 @@ import {useEffect} from "react";
 
 const Home: NextPage = () => {
   useEffect(()=> {
-      window.open("snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/", "_blank")
+      window.location.href = "snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/";
   });
 
   async function handleOpenDeeplink() {
