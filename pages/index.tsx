@@ -1,16 +1,22 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import {useEffect} from "react";
 
 const Home: NextPage = () => {
-  const handleOpenDeeplink = () => {
-      const data ={
-          "url":"https://docs.zalopay.vn"
-      }
-      //@ts-ignore
-      ZJSBridge.Device.showToast("Message", e => {console.log(e)})
-     // ZJSBridge.Misc.openInAppRw(data, (e: any) => {console.log("demo")})
-  }
+  useEffect(()=> {
+      window.open("snssdk3817://webview?biz_id=AWUAABNGzPCzPUiltceOAgo6EAcD&hide_nav_bar=1&url=https://docs.zalopay.vn/", "_blank")
+  });
+
+    const handleOpenDeeplink = () => {
+        const data ={
+            "url":"https://docs.zalopay.vn"
+        }
+
+        //@ts-ignore
+        ZJSBridge.Device.showToast("Message", e => {console.log(e)})
+        // ZJSBridge.Misc.openInAppRw(data, (e: any) => {console.log("demo")})
+    }
 
   return (
     <div className={styles.container}>
