@@ -4,7 +4,7 @@ import styles from "../../styles/Home.module.css";
 function Index() {
     const [url, setURL] = useState("null")
     function handleGetURL() {
-        const u = window.location.href + window.location.search
+        const u = window.location.href
         setURL(u);
     }
 
