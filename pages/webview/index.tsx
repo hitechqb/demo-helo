@@ -2,7 +2,7 @@ import {useState} from "react";
 import styles from "../../styles/Home.module.css";
 
 function Index() {
-    const [url, setURL] = useState("null")
+    const [url, setURL] = useState("")
     function handleGetURL() {
         const u = window.location.href
         setURL(u);
@@ -13,8 +13,9 @@ function Index() {
             <div className={styles.container}>
              <p> The page for check redirect</p>
             <div className={styles.card} style={{wordWrap: "break-word"}}>
-                <p>FullURL: {url} </p>
+                <p>FullURL {url} </p>
                 <button onClick={handleGetURL}>GetFullURL</button>
+                <button onClick={()=>{setURL("")}}>Clear</button>
             </div>
             </div>
         </>
