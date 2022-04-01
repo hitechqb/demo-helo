@@ -14,6 +14,9 @@ function Index() {
              <p>webview page for check redirect</p>
             <div className={styles.card} style={{wordWrap: "break-word"}}>
                 <p>FullURL: {url} </p>
+                <p>Href: {window.location.href} </p>
+                <p>Path: {window.location.pathname} </p>
+                <p>Search: {window.location.search} </p>
                 <button onClick={handleGetURL}>GetURL</button>
                 <button onClick={()=> setURL("null")}>Clear</button>
             </div>
